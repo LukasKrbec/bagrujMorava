@@ -1,0 +1,561 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: Roboto, sans-serif;
+    list-style: none;
+}
+body{
+    font-size: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+main{
+    /* background-color: teal; */
+    max-width: 71.8em;
+    padding: 0.7em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+/* ################### HEADER #########################*/
+header, footer{
+    width: 100%;
+    background-color: #FFD300;
+    height: 4.6875em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0.125em 0.375em rgb(196, 195, 195);
+    z-index: 20;
+
+}
+header{
+    position: fixed;
+}
+.oddelovac-nav{
+    z-index: 0;
+    position: relative;
+    width: 100%;
+    height: 4.6875em;
+    box-shadow: none;
+
+}
+nav{
+    justify-content: flex-start;
+
+    width: 71.8em;
+    margin: 0 2em;
+}
+footer nav{
+    display: flex;
+    justify-content: flex-end;
+}
+header li, footer li {
+    display:inline-block;
+    font-weight: bold;
+    margin: 0.3em;  
+}
+header li a, footer li a{
+    color: #3C3C3C; 
+    text-transform: uppercase;
+    font-size: 1em;
+    display: block;
+    z-index: 20;
+
+}
+
+/* ####################### UVOD ########################## */
+.uvod{
+    height: 27em;
+    display: flex;
+    position: relative;
+    max-width: 63em;
+    margin: 0 auto;
+    margin-top: -3em;
+    /* background-color: lightsalmon; */
+    position: fixed;
+}
+.uvod-oddelovac {
+    position: relative;
+    background-color: tomato;
+    visibility: hidden;
+}
+.uvod-text{
+    flex:1;
+    align-self: center;
+    margin:0 3em;    
+}
+.uvod-text h1{
+    font-size: 3em;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #3C3C3C; 
+    margin-bottom: 0.5em;
+}
+.uvod-text h1 span{
+    color: #FC0909; 
+}
+.uvod-text h2{
+    font-size: 1.5em;
+    font-weight: 500;
+    color: #767474;
+}
+.uvod img{
+    height: 22em;
+}
+/* ################ SLUZBY ############## */
+.sluzby{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    /* margin: 0 2em; */
+}
+.karta{
+    position: relative;
+    box-sizing: border-box;
+    min-width: 22.5em;
+    max-width: 22.5em;
+    height: auto;
+    box-shadow:0px 0.25em 0.5625em rgba(0, 0, 0, 0.25);
+    padding: 1.5em;
+    display: flex;
+    flex-direction: column;
+    /* grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr; */
+    margin: 0.7em;
+    background-color: rgba(255, 255, 255, 0.247);
+    backdrop-filter: blur(1em);
+    -webkit-backdrop-filter: blur(1em);
+    z-index: 1;     
+}
+/* .karta:nth-of-type(3){
+justify-content: flex-start;} */
+
+.karta-img{
+    /* grid-row: 1/4; */
+}
+.karta-img img{
+    max-width:100%;
+}
+
+.karta-text{
+    margin-top:2em;
+    /* grid-row: 4/7; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    /* grid-template-rows: 1fr 1fr 1fr 1fr; */
+    flex:1;
+}
+.karta button, .kontaktni-formular button{
+    display: block;
+    align-self: center;
+    justify-self: flex-end;
+    width: 7.5em;
+    height: 2.625em;
+    font-weight: 500;
+    font-size: 1.5em;
+    text-transform: capitalize;
+    background-color: #FFD300;
+    border-style: none;
+    color: rgba(83, 82, 82, 1); 
+    margin: 1em 0;
+    /* grid-row: 4/5; */
+
+}
+.karta-text h1{
+    font-size: 2em;
+    font-weight: 700;
+    color: rgba(83, 82, 82, 1); 
+    /* grid-row: 1/2; */
+    /* flex:1; */
+}
+.karta-text p{
+    /* grid-row: 2/4; */
+    font-size: 0.875em;
+    font-weight: 400;
+    line-height: 1.5em;
+    color: #767474;
+    margin: 2em 0;
+    /* flex:1; */
+
+}
+/* ################ CENIK ################# */
+.cenik{
+    width: calc(100% - 3em);
+    background-color: #FFD300;
+    height: calc(100% - 3em);
+    max-height: 55%;
+    position: absolute;
+    z-index: 3;
+    transition: all ease 1s;
+    /* display: flex; */
+    flex-direction: column;
+    overflow: hidden;
+    height: 0;
+    color: transparent;
+
+
+}
+.cenik-show{
+    height: calc(100% - 3em);
+    color: #3C3C3C;
+}
+.cenik span{
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 1em;
+    text-align: right;
+    display: inline;
+    width: 100%;
+    /* background-color: rgb(235, 98, 19); */
+    font-weight: 700;
+    cursor: pointer;
+    width: 3em;
+}
+
+.cenik h1{
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: 2.5em;
+    /* flex: 1; */
+    padding: 0 1.5rem;
+    padding-top: 1.5rem;
+    height: 55%;
+}
+.cenik p{
+    box-sizing: border-box;
+    display: inline-block;
+    /* position: absolute; */
+    bottom: 5em;
+    font-size: 1.3333em;
+    /* flex: 1; */
+    padding: 0 1.5rem;
+    height: 15%;
+}
+.cenik a{
+    display: inline-block;
+    height: 0.5em;
+}
+.cenik i{
+    display: inline-block;
+
+    box-sizing: border-box;
+    height: 20%;
+    margin-bottom: 0.4em;
+    padding: 0;
+    color: #FC0909;
+    font-size: 2.5em;
+    position: relative;
+    line-height: 1em;
+}
+.cenik button{
+    width: 100%;
+    margin:0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/* ################### O NAS ######################### */
+.onas{
+    box-shadow:0px 0.25em 0.5625em rgba(0, 0, 0, 0.25);
+    min-width: 22em;
+    max-width: calc(100% - 1.4em);
+    width: calc(100% - 1.4em);
+    margin: 0.7em;
+    background-color: rgba(255, 255, 255, 0.247);
+    backdrop-filter: blur(1em);
+    -webkit-backdrop-filter: blur(1em);
+    z-index: 1;
+    display:flex;
+    justify-content: space-evenly;
+}
+
+.martin, .bagr{
+    max-width:21em;
+    min-width:1em;
+    margin: 2em 0em;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5em;
+}
+.onas h1{
+    grid-row: 1/2;
+    font-size: 2.5em;
+    font-weight: 700;
+    color: rgba(83, 82, 82, 1); 
+    align-self: center;
+}
+.test{
+    height: 23em;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+}
+.onas p{
+    font-size: 0.875em;
+    font-weight: 400;
+    line-height: 1.5em;
+    color: #767474;
+}
+.martin img{
+    align-self: center;
+    width: 13em;
+    border-radius: 50%;
+    margin-top: 2em;
+}
+.bagr img{
+    align-self: center;
+    width: 100%;
+}
+/* ###################### KONTAKTY ###################### */
+.kontakt{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    /* margin: 0.7em 0;   */
+    margin-bottom: 2em;
+    /* background-color: tomato; */
+}
+.kontaktni-formular, .kontakty{
+    max-width: 34.5em;
+    min-width: 34.5em;
+    box-shadow:0px 0.25em 0.5625em rgba(0, 0, 0, 0.25);
+    margin: 0.7em;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);}
+.kontaktni-formular{
+    display: flex;
+    justify-content: center;
+
+}
+.kontaktni-formular form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.kontaktni-formular input, textarea{
+    height: 3em;
+    background-color: rgba(238, 237, 237, 0.575);
+    border-style: none;
+    font-size: 1em;
+}
+.kontaktni-formular textarea{
+    box-sizing: border-box;
+    padding: 0.5em;
+    width: 25em;
+    height:15em;
+    margin-top: 2em;
+    margin-left: 3em;
+    resize: none;
+}
+.kontaktni-formular .pole{
+    margin: 1em 0;
+    display: flex;
+    align-items: center;
+}
+.kontaktni-formular button, .kontaktni-formular h1{
+    margin: 2em;
+}
+.kontaktni-formular h1{
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+    color: rgba(83, 82, 82, 1); 
+}
+.kontaktni-formular input{
+    width: 25em;
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0.5em;
+}
+.kontaktni-formular .fas{
+    display: inline-block;
+    width: 1.5em;
+    font-size: 1.5em;
+    color: #767474;
+    margin-right: 0.5em;
+}
+/* .kontakty{
+    margin-right: 0.7em;
+    margin-left: 0.7em;
+    display: flex;
+    flex-direction: column;
+} */
+.kontakty-text{
+    margin-left: 2.5em;
+    flex:1;
+}
+.kontakty-text .fas{
+    display: inline-block;
+    min-width: 1.5em;
+    font-size: 1.5em;
+    color: #767474;
+    margin-right: 1em;
+}
+.kontakty-text a{
+    margin: 1em 0;
+    display: flex;
+    align-items: center;
+    /* flex-wrap: wrap; */
+    padding: 1em;
+}
+.kontakty-text li:first-of-type a{
+    margin: 0.5em 0;
+    display: flex;
+    align-items: flex-start;
+}
+.kontakty-text a:hover span{
+    text-decoration: underline;
+    color: #FFD300;
+}
+.kontakty-mapa{
+    margin:2.5em;
+    margin-top: 0;
+    opacity: 0.8;
+}
+.kontakty-text h1{
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+    color: rgba(83, 82, 82, 1); 
+    text-align: center;
+}
+.kontakty-text span{
+    display: block;
+    font-size: 1.5em;
+    color: #767474;
+}
+#adresa{
+    display: inline;
+    font-size: 1em;
+}
+/* ################ ODKAZY ############## */
+#onas, #sluzby, #kontakty {
+    position: absolute;
+    top: -5.5em;
+}
+article{
+    position: relative;
+}
+
+/* ######### MEDIA QUERY ################### */
+
+
+/* ########### UVOD SLUZBY se rozbijeji ######## */
+@media only screen and (max-width: 845px) {
+    body{
+        min-width: 320px;
+    }
+    .uvod{
+        flex-direction:column;
+        margin-top: 2em;
+        height: auto;
+    }
+  
+    .uvod img{
+        margin-top: -1em;
+        width: 100%;
+        max-width: 40em;
+        height: auto;
+        margin:0 auto;
+    }
+    .karta, .onas{
+        min-width: 10em;
+    }
+    .onas{
+        max-width: calc(100% - 1.4em);
+        width: 100%;
+        min-width: 10em;
+        flex-direction: column;
+        align-items: center;
+    }
+    .test{
+        height: auto;
+        margin-bottom: 2em;
+    }
+    @media only screen and (max-width: 670px) {
+        body{
+            display: block;
+        }
+       
+        .kontakty, .kontaktni-formular{
+            width: 100%;
+            min-width: 10em;
+        }
+        .kontakty-text{
+            margin: 0 1.5em;
+        }
+        .kontaktni-formular input{
+            width:100%;
+
+        }
+       
+        /* ##################### */
+        .kontaktni-formular{
+            /* background-color: cadetblue; */
+            /* min-width: 10em; */
+        }
+        form{
+            display: block;
+            /* background-color: burlywood; */
+            width: 100%;
+
+        }
+        .pole {
+            /* background-color: blueviolet; */
+            width: calc(100% - 4em);
+            /* min-width: 100%; */
+        }
+     
+        .kontaktni-formular h1{
+            margin-left:0;
+            margin-right:0;
+
+            /* color: chocolate; */
+        }
+        .kontaktni-formular button{
+            margin-left:0;
+            margin-right:0;
+            width: 7em;
+            /* color: chocolate; */
+        }
+        .kontaktni-formular textarea{
+            margin-left:0;
+            margin-right:0;
+            width: calc(100% - 4em);
+            min-width: 1em;
+            /* color: chocolate; */
+        }
+        .kontaktni-formular input{
+            margin-left:0;
+            margin-right:0;
+            /* width: calc(80% - 4em); */
+            min-width: 1em;
+            color: chocolate;
+        }
+        footer ul{
+            display: none !important;
+        }
+
+        @media only screen and (max-width: 360px) {
+        .cenik {
+            height: 23em;
+            max-height: 65%;        
+        }
+
+    }
+
+
+}
+}
